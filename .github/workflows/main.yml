@@ -40,4 +40,4 @@ jobs:
       run: yarn test:ci
 
     - name: lint
-      run: yarn lint:ci
+      run: yarn danger:ci && yarn deps:check:circular && yarn lint:ci
