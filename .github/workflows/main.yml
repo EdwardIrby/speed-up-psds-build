@@ -38,9 +38,6 @@ jobs:
     - name: Build
       run: yarn build
 
-    - name: Danger
-      run: yarn danger:ci
-
     - name: Circular dependency check
       run: yarn deps:check:circular
 
