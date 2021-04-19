@@ -32,11 +32,20 @@ jobs:
           ${{ runner.os }}-yarn-
 
 
-    - name: Install packages
+    - name: Install
       run: yarn install
+
+    - name: Build
+      run: yarn build
+
+    - name: Danger
+      run: yarn danger:ci
+
+    - name: Circular dependency check
+      run: yarn deps:check:circular
+
+    - name: Lint
+      run: yarn lint:ci
 
     - name: Test
       run: yarn test:ci
-
-    - name: lint
-      run: yarn danger:ci && yarn deps:check:circular && yarn lint:ci
