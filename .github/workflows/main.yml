@@ -33,7 +33,10 @@ jobs:
 
 
     - name: Install packages
-        run: yarn install
+      run: yarn install
 
     - name: Test
       run: yarn test:ci
+
+    - name: lint
+      run: yarn danger:ci && yarn deps:check:circular && yarn lint:ci
